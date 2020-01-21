@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using TradeDataFeed.Interfaces;
+using TradeDataFeed.Models;
 
 namespace TradeDataFeed.Controllers
 {
@@ -20,13 +21,14 @@ namespace TradeDataFeed.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            return null;
         }
 
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public ActionResult<OMSTradeData> Get(int id)
         {
-            var data = _tradeDataService.GetData();
+            var data = _tradeDataService.GetData(id);
             return data;
         }
 

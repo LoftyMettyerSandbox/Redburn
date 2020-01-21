@@ -1,12 +1,13 @@
 ﻿using TradeDataFeed.Interfaces;
+using TradeDataFeed.Models;
 
 namespace TradeDataFeed
 {
     public class TradeDataService : ITradeDataService
     {
-        public string GetData()
+        public OMSTradeData GetData(int tradeId)
         {
-            return "not yet implemented";
+            return null;
         }
     }
 }

@@ -1,7 +1,9 @@
-﻿namespace TradeDataFeed.Interfaces
+﻿using TradeDataFeed.Models;
+
+namespace TradeDataFeed.Interfaces
 {
     public interface ITradeDataService
     {
-        string GetData();
+        OMSTradeData GetData(int tradeId);
     }
 }

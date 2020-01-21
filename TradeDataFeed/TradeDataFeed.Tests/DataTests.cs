@@ -1,4 +1,5 @@
 using TradeDataFeed.Controllers;
+using TradeDataFeed.Models;
 using TradeDataFeed.Tests.MockData;
 using Xunit;
 
@@ -12,11 +13,9 @@ namespace TradeDataFeed.Tests
         [Fact]
         public void DataFeed_Returns_ValidData()
         {
-
             var serviceAPI = new TradesController(_tradeDataService);
             var data = serviceAPI.Get(1);
-            Assert.NotNull(data.Value);
-
+            Assert.IsType<OMSTradeData>(data.Value);
         }
     }
 }
