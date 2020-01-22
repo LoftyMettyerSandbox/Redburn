@@ -3,6 +3,7 @@ using TradeDataFeed.Contexts;
 using TradeDataFeed.Interfaces;
 using TradeDataFeed.Models;
 using TradeDataFeed.Streams;
+using TradeDataFeed.Tests.MockData;
 using Xunit;
 
 namespace TradeDataFeed.Tests
@@ -13,6 +14,7 @@ namespace TradeDataFeed.Tests
 
         //private MockTradeContext _tradeContext = new MockTradeContext();
         private ITradeDataStream _tradeDataStream = new MockTradeDataStream();
+        private IMessageQueue messageQueue = new MockMessageQueue();
 
         //ServiceTests() {
         //    // do initialisation here!
@@ -44,15 +46,12 @@ namespace TradeDataFeed.Tests
             //liveContext.Database.Migrate();
             liveContext.Database.EnsureCreated();   // shouldnt be necessary but for some reason db is not getting generated on savechanges. Investigate when given time.
 
-
-            var tradeService = new TradeDataService(liveContext);
-
+            var tradeService = new TradeDataService(liveContext); //, messageQueue);
 
             var tradeStream = _tradeDataStream.GetTradeStream();
             var tradeMessage = new OMSTradeDataMessage(tradeStream);
 
-            var result = tradeService.CommitTrades(tradeMessage);
-
+            var result = tradeService.AddTrade(tradeMessage);
 
             Assert.True(result);
 

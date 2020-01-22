@@ -8,7 +8,7 @@ namespace TradeDataFeed.Streams
     {
         public Stream GetTradeStream()
         {
-            var path = Directory.GetCurrentDirectory() + "\\Streams\\MockData\\MockTradeData.txt";
+            var path = Directory.GetCurrentDirectory() + "\\MockData\\MockTradeData.txt";
             string jsonData = File.ReadAllText(path);
 
             return new MemoryStream(Encoding.UTF8.GetBytes(jsonData ?? ""));

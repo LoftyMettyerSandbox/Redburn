@@ -30,11 +30,20 @@ namespace TradeDataFeed
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddScoped<ITradeDataContext, TradeContext>();
-            //services.AddSingleton<ITradeDataService>(new TradeDataService(ITradeDataContext>));
+            //services.AddScoped<IMessageQueue, MessageQueue>();
 
-            services.AddDbContext<TradeContext>(options => {
+
+            //  services.AddHostedService<MessageQueue>();
+
+//            var context = new TradeContext (options => {
+  //              options.UseSqlServer("Server=.;Database=Redburn_Lofty1;user id=sa;password=asr;");
+
+               services.AddDbContext<TradeContext>(options => {
                 options.UseSqlServer("Server=.;Database=Redburn_Lofty1;user id=sa;password=asr;");
-        });
+
+           // services.AddSingleton<ITradeDataService>(new TradeDataService(context));
+
+            });
 
 
         }

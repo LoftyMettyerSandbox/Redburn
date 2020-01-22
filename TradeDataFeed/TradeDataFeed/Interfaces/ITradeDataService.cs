@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using TradeDataFeed.Models;
 
 namespace TradeDataFeed.Interfaces
 {
-    interface ITradeDataService
+    public interface ITradeDataService
     {
-
-
+        //bool CommitTrades(OMSTradeDataMessage tradeMessage);
+        bool AddTrade(OMSTradeDataMessage tradeMessage);
     }
 }

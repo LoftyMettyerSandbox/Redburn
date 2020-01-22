@@ -11,7 +11,7 @@ namespace TradeDataFeed.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TradesController : ControllerBase, ITradeDataService
+    public class TradesController : ControllerBase //, ITradeDataService
     {
 
         private readonly ITradeDataContext _tradeContext;
@@ -46,19 +46,17 @@ namespace TradeDataFeed.Controllers
                 var _tradeDataService = new TradeDataService(_tradeContext);
                 var tradeMessage = new OMSTradeDataMessage(jsonData.ToString());
 
-                var result = _tradeDataService.CommitTrades(tradeMessage);
+                //                var result = _tradeDataService.CommitTrades(tradeMessage);
+
+                _tradeDataService.AddTrade(tradeMessage);
 
                 // tradeservices.validate
 
                 // handle and send to message bin
 
-
             }
             catch {
-
             }
-
-
 
             //            var toTrades = new List<OMSTradeData>(dataStream);
 
