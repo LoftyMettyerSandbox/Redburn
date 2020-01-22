@@ -6,9 +6,7 @@ namespace TradeDataFeed.Interfaces
 {
     public interface ITradeDataContext
     {
-    //    OMSTradeData GetData(int tradeId);
-//        void CommitTrade(OMSTradeData trade);
         bool CommitTrades(IEnumerable<OMSTradeData>trades);
-
+        bool CommitMessage(MessageBin message);
     }
 }

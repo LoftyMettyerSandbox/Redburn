@@ -17,6 +17,5 @@ namespace TradeDataFeed.Models
         public OrderSubType OrderSubType { get; set; }
         public string Instruction { get; set; }
         public OrderTransmissionType OrderTransmissionType { get; set; }
-
     }
 }
