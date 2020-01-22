@@ -20,10 +20,4 @@
     <ProjectReference Include="..\TradeDataFeed\TradeDataFeed.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Update="MockData\MockTradeData.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
 </Project>

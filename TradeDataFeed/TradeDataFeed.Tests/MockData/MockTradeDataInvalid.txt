@@ -1,0 +1,16 @@
+﻿[
+  {
+    "orderType": 0,
+    "orderSize": 123,
+    "orderSubType": 0,
+    "instruction": "fill",
+    "orderTransmissionType": 1
+  },
+  {
+    "identifier": "BP.",
+    "orderSize": 456,
+    "orderSubType": 2,
+    "instruction": "DayOrder",
+    "orderTransmissionType": 1
+  }
+]

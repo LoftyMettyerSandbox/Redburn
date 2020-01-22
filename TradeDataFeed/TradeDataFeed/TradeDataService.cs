@@ -1,13 +1,45 @@
-﻿using TradeDataFeed.Interfaces;
+﻿using System;
+using TradeDataFeed.Enums;
+using TradeDataFeed.Interfaces;
 using TradeDataFeed.Models;
 
 namespace TradeDataFeed
 {
-    public class TradeDataService : ITradeDataService
+    public class TradeDataService
     {
-        public OMSTradeData GetData(int tradeId)
+
+        private readonly ITradeDataContext _context;
+
+        public TradeDataService(ITradeDataContext context)
         {
-            return null;
+            _context = context;
         }
+
+        public bool CommitTrades(OMSTradeDataMessage tradeMessage)
+        {
+
+            if (tradeMessage.Validity == MessageValidityType.Success)
+            {
+                _context.CommitTrades(tradeMessage.Trades);
+            }
+            else
+            {
+                // Send to bin
+                var message = new MessageBin()
+                {
+                    ReceivedDate = DateTime.Now,
+                    Message = tradeMessage.OriginalMessage,
+                    ValidityType = tradeMessage.Validity
+                };
+
+                _context.CommitMessage(message);
+
+            }
+
+            return true;
+        }
+
+
+
     }
 }

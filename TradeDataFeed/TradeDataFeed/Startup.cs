@@ -6,10 +6,12 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using TradeDataFeed.Contexts;
 using TradeDataFeed.Interfaces;
 
 namespace TradeDataFeed
@@ -27,7 +29,14 @@ namespace TradeDataFeed
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            services.AddScoped<ITradeDataService, TradeDataService>();
+            services.AddScoped<ITradeDataContext, TradeContext>();
+            //services.AddSingleton<ITradeDataService>(new TradeDataService(ITradeDataContext>));
+
+            services.AddDbContext<TradeContext>(options => {
+                options.UseSqlServer("Server=.;Database=Redburn_Lofty1;user id=sa;password=asr;");
+        });
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
