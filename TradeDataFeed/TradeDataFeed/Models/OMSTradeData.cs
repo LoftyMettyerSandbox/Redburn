@@ -1,4 +1,5 @@
-﻿using TradeDataFeed.Enums;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using TradeDataFeed.Enums;
 
 namespace TradeDataFeed.Models
 {
@@ -8,6 +9,8 @@ namespace TradeDataFeed.Models
 
     public class OMSTradeData
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
         public string Identifier { get; set; }
         public OrderType OrderType { get; set; }
         public int OrderSize { get; set; }

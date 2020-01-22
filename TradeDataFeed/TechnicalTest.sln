@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.902
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradeDataFeed", "TradeDataFeed\TradeDataFeed.csproj", "{9331E066-BFCE-472F-9F5D-1C708A803213}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TradeDataFeed", "TradeDataFeed\TradeDataFeed.csproj", "{9331E066-BFCE-472F-9F5D-1C708A803213}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradeDataFeed.Tests", "TradeDataFeed.Tests\TradeDataFeed.Tests.csproj", "{9BA86BBE-8DF0-42A6-B38C-DCA9148F4828}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TradeDataFeed.Tests", "TradeDataFeed.Tests\TradeDataFeed.Tests.csproj", "{9BA86BBE-8DF0-42A6-B38C-DCA9148F4828}"
+EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "ConsoleApp", "NodejsConsoleApp1\ConsoleApp.njsproj", "{0394DD7F-F36A-4417-B658-B0609DC43317}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradeStreamConsole", "TradeStreamConsole\TradeStreamConsole.csproj", "{FB1FED3D-58DE-4FBE-9D22-DCB28B934F4E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{9BA86BBE-8DF0-42A6-B38C-DCA9148F4828}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9BA86BBE-8DF0-42A6-B38C-DCA9148F4828}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9BA86BBE-8DF0-42A6-B38C-DCA9148F4828}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0394DD7F-F36A-4417-B658-B0609DC43317}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0394DD7F-F36A-4417-B658-B0609DC43317}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0394DD7F-F36A-4417-B658-B0609DC43317}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0394DD7F-F36A-4417-B658-B0609DC43317}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB1FED3D-58DE-4FBE-9D22-DCB28B934F4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB1FED3D-58DE-4FBE-9D22-DCB28B934F4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB1FED3D-58DE-4FBE-9D22-DCB28B934F4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB1FED3D-58DE-4FBE-9D22-DCB28B934F4E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
